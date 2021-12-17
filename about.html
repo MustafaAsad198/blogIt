@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogIt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    
+    .con{
+        background-color: blanchedalmond;
+        font-size: large;
+        padding: 5px 10px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    .bt{
+        height: 35px;
+        width: fit-content;
+        border: 3px solid black;
+        border-radius: 7px;
+        margin: 20px;
+        cursor: pointer;
+        font-family: cursive;
+        font-size: medium;
+        transition: .3s ease-in-out;
+    }
+    .bt:hover{
+        height: 40px;
+        width: 150px;
+        background-color: coral;
+    }
+    .progress{
+       
+        height: 2px;
+        animation: load 1s ease-in-out 1 ;
+    }
+    @keyframes load {
+        0%{
+            width: 0;
+            background-color: red;
+        }
+        50%{
+            width: 60vw;
+            background-color: red;
+        }
+        95%{
+            width: 100vw;
+            background-color: red;
+        }
+         100%{
+             width: 101vw;
+             background: none;
+         }
+    }
+</style>
+
+<body>
+    <div class="progress"></div>
+    <form action="bloghome.html"><button class="bt">Go to Home</button></form>
+    <div class="con">
+        <p>blogIt is a webpage which helps you surf through variety of blogs and expand your horizon of knowledge.
+            You'll find a number of well descriptive blogs in here regarding various topics.</p>
+        <p>Regarding any suggestions as well as complaints, you can get in touch with us via the <span><a
+                    href="contact.html">Contact </a> page anytime.</span>We'll do our best to meet you needs.</p>
+        <p>You can also submit your articles to us after contacting us. If we find your work helpful and appreciable,
+            we'll get your words published here and also you'll be awarded credits for it. So, don't miss this
+            opportunity! Show us your writing skills and be a master in blogIt Arena!</p>
+        <h3>OUR CONTACT DETAILS:</h3>
+        <ul>
+            <li>e-mail : <a href="mailto:mustafaasad198@gmail.com"></a>mustafaasad198@gmail.com </li>
+        </ul>
+        <h1><b>OWNER / DEVELOPER : Mustafa Asad</b></h1>
+        <h2>Graphics and Designing help:</h2>
+        <ul>
+            <li>Images source : <a
+                    href="https://www.bing.com/images/search?q=blog%20drawings&qs=n&form=QBIRMH&sp=-1&pq=blog%20drawings&sc=1-13&cvid=03DEBE29571B47A2B7CF4F05E469419B&first=1&tsc=ImageBasicHover">Bing
+                    images</a></li>
+            <li>Assistances from an amazing web developer, Mohd. Harish ;)</li>
+            <li>An outstading website that number of libraries for CSS animations : <a href="https://animate.style/">animate.css</a></li>
+            <li>Aid from various websites which are marked as the Source in each blog.</li>
+        </ul> <br>
+        <p>Well, that's all about us. Get in touch with us and we'll make your time, spended here, memorable!</p>
+        <h2>ENJOY!</h2>
+    </div>
+</body>
+
+</html>

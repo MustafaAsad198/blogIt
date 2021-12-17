@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogIt</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --main-bg-color: brown;
+    }
+
+    .navi {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 81vw;
+        margin: auto;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-top: 20px;
+    }
+
+    .nl {
+        font-size: large;
+        display: flex;
+    }
+
+    .nl ul li {
+        list-style: none;
+        margin: 0 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+
+    .nl ul {
+        display: flex;
+        align-items: center;
+        margin: 0 80px;
+        font-size: large;
+    }
+
+    .nl ul li a {
+        text-decoration: none;
+        color: darkslategray;
+
+    }
+
+    .nl ul li a:hover {
+        font-size: larger;
+        font-weight: bold;
+        color: var(--main-bg-color);
+    }
+
+
+
+    .c {
+        height: 100%;
+        background-color: rgb(243, 243, 244, 0.7);
+        display: flex;
+        padding: 10px;
+        border-radius: 15px;
+        position: relative;
+
+    }
+
+    .c::after {
+        background-image: url(keyboard.jpg);
+        content: "";
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 725px;
+        width: 100%;
+        height: inherit;
+        opacity: 0.1;
+    }
+
+    .foot {
+        height: 40px;
+        background-color: var(--main-bg-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .maxw1 {
+        max-width: 98vw;
+        margin: 35px auto;
+    }
+
+    .maxw2 {
+        max-width: 95vw;
+        margin: auto;
+    }
+
+    .formin {
+        width: 200px;
+        padding: 10px 10px;
+        font-size: small;
+        border: 2px solid grey;
+        border-radius: 7px;
+        margin: 0 5px;
+        font-family: cursive;
+        transition: .3s ease-in-out;
+    }
+
+    .formin:hover {
+        box-shadow: 2px 2px 2px 2px grey;
+    }
+
+    .btn {
+        padding: 6px 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size: medium;
+        font-family: cursive;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+
+    .btn:hover {
+        background-color: var(--main-bg-color);
+        color: white;
+    }
+
+    .cl {
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 35px;
+        z-index: 1;
+    }
+
+    .cr {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cr img {
+        height: 350px;
+        border: 3px solid darkgray;
+        border-radius: 200px;
+        padding: 5px;
+    }
+
+    .arts {
+        background-color: rgb(240, 233, 233, 0.6);
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    .art img {
+        width: 200px;
+        border-radius: 20px;
+    }
+
+    .art {
+        display: flex;
+        margin: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .artc {
+        text-align: center;
+        padding: 25px;
+        width: 305px;
+    }
+
+    .artc a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .pimg {
+        width: 336px;
+        height: 336px;
+        overflow: hidden;
+        margin: auto;
+
+    }
+
+    .pimg img {
+        height: 335px;
+
+    }
+
+    .bpc {
+        background-color: rgb(245, 222, 179, .4);
+        border-radius: 15px;
+    }
+
+    .row {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: auto auto auto;
+    }
+
+    .bpm {
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .authorinfo {
+        padding: 5px 10px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        margin: 10px 0;
+        font-size: x-large;
+    }
+
+    .social {
+        align-self: center;
+        padding-right: 21px;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width:1100px) {
+        .navi {
+            flex-direction: column;
+        }
+
+        .nl {
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .formin {
+            width: 50%;
+        }
+
+        .row {
+            grid-template-columns: auto;
+        }
+
+        .social {
+            padding: 0;
+        }
+
+        .pimg {
+            height: auto;
+        }
+    }
+
+    .progress {
+
+        height: 2px;
+        animation: load 1s ease-in-out 1;
+    }
+
+    @keyframes load {
+        0% {
+            width: 0;
+            background-color: red;
+        }
+
+        50% {
+            width: 60vw;
+            background-color: red;
+        }
+
+        95% {
+            width: 100vw;
+            background-color: red;
+        }
+
+        100% {
+            width: 101vw;
+            background: none;
+        }
+    }
+</style>
+
+<body>
+    <div class="progress"></div>
+    <nav class="navi">
+        <div class="nl">
+            <div style="display: flex;"><img src="bloglogo.png" alt=""><span
+                    style="color: blueviolet; font-size: 40px; font-family: cursive;"><b>It</b></span></div>
+            <ul>
+                <li><a href="bloghome.html">Home</a>
+                </li>
+                <li><a href="about.html">About</a>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nr">
+            <form action="search.html" method="get"><input class="formin" type="text" name="query"
+                    placeholder="Search Title/Keyword of Article">
+                <button class="btn">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="maxw1">
+        <hr>
+    </div>
+    <div class="pimg">
+        <img src="blog3.jpg" alt="">
+    </div>
+    <div class="bpc maxw1">
+        <h1 style="text-align: center; color: darkslategrey;">Words on news</h1><br>
+        <div class="bpm">
+            <div class="authorinfo">
+                <div>Author : Anonymous<span style="font-size: large; color: grey;"></span>
+                </div>
+                <div>8th July,2021 | 15 minutes read</div>
+            </div>
+            <div class="social"><svg width="29" height="29" class="go">
+                    <path
+                        d="M22.05 7.54a4.47 4.47 0 0 0-3.3-1.46 4.53 4.53 0 0 0-4.53 4.53c0 .35.04.7.08 1.05A12.9 12.9 0 0 1 5 6.89a5.1 5.1 0 0 0-.65 2.26c.03 1.6.83 2.99 2.02 3.79a4.3 4.3 0 0 1-2.02-.57v.08a4.55 4.55 0 0 0 3.63 4.44c-.4.08-.8.13-1.21.16l-.81-.08a4.54 4.54 0 0 0 4.2 3.15 9.56 9.56 0 0 1-5.66 1.94l-1.05-.08c2 1.27 4.38 2.02 6.94 2.02 8.3 0 12.86-6.9 12.84-12.85.02-.24 0-.43 0-.65a8.68 8.68 0 0 0 2.26-2.34c-.82.38-1.7.62-2.6.72a4.37 4.37 0 0 0 1.95-2.51c-.84.53-1.81.9-2.83 1.13z">
+                    </path>
+                </svg>
+                <svg style="background: black;
+                border-radius: 10px;" width="29" height="29" viewBox="0 0 29 29" fill="none" class="go">
+                    <path
+                        d="M5 6.36C5 5.61 5.63 5 6.4 5h16.2c.77 0 1.4.61 1.4 1.36v16.28c0 .75-.63 1.36-1.4 1.36H6.4c-.77 0-1.4-.6-1.4-1.36V6.36z">
+                    </path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10.76 20.9v-8.57H7.89v8.58h2.87zm-1.44-9.75c1 0 1.63-.65 1.63-1.48-.02-.84-.62-1.48-1.6-1.48-.99 0-1.63.64-1.63 1.48 0 .83.62 1.48 1.59 1.48h.01zM12.35 20.9h2.87v-4.79c0-.25.02-.5.1-.7.2-.5.67-1.04 1.46-1.04 1.04 0 1.46.8 1.46 1.95v4.59h2.87v-4.92c0-2.64-1.42-3.87-3.3-3.87-1.55 0-2.23.86-2.61 1.45h.02v-1.24h-2.87c.04.8 0 8.58 0 8.58z"
+                        fill="#fff"></path>
+                </svg>
+                <svg width="29" height="29" class="go">
+                    <path
+                        d="M23.2 5H5.8a.8.8 0 0 0-.8.8V23.2c0 .44.35.8.8.8h9.3v-7.13h-2.38V13.9h2.38v-2.38c0-2.45 1.55-3.66 3.74-3.66 1.05 0 1.95.08 2.2.11v2.57h-1.5c-1.2 0-1.48.57-1.48 1.4v1.96h2.97l-.6 2.97h-2.37l.05 7.12h5.1a.8.8 0 0 0 .79-.8V5.8a.8.8 0 0 0-.8-.79">
+                    </path>
+                </svg>
+            </div>
+        </div>
+        <p
+            style="font-size: 20px; padding: 8px;  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            News is an unpublished account of human activity, which seeks to interest, inform, or educate the readers.
+        </p>
+        <p
+            style="font-size: 20px; padding: 8px;  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            News is a truly, concise and accurate report of the event. A news is the report of an event and what an
+            event itself. News means the record of the event that has taken place in a particular era. The significant
+            element of news is that it is an event in which some kind of action takes place. It is a report in which the
+            action is described narrated, highlighted or recorded. News is written in a comprehensive manner. There
+            should be one audience or a class of readership. To whom the description is to be presented in print or on
+            the air or on T.V. or movie screen. News should provoke into recipients or at least some of them to thought
+            or action. <br>
+            <br>
+
+
+            The important characteristics of news are <br>
+
+            1. Accuracy <br>
+            2. Balance <br>
+            3. Objectivity <br>
+            4. Concise and Clear <br>
+            5. Current and freshness <br>
+            <br>
+
+            We usually get most of your news about what is going on in the world today from the newspaper or radio or
+            television or magazine or talking to people.
+        </p>
+        <p style="text-align: right;">Source: <a
+                href="http://studylecturenotes.com/what-is-news-meaning-definition-and-sources-of-news/">Internet</a>
+        </p>
+    </div>
+    <div class="maxw1">
+        <hr>
+    </div>
+    <div class="arts maxw1">
+        <h1 style="padding: 15px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">You may
+            also like!</h1>
+        <div class="row">
+            <div class="art">
+                <div class="artim"><img src="blog1.jpg" alt="article"></div>
+                <div class="artc"
+                    style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                    <a href="blogpost1.html">
+                        <h3>What do you know about Blog?</h3>
+                    </a>
+                    <div>Author's Name: Artem Minaev </div>
+                    <span>7th July, 2019 | 10 minutes read</span>
+                </div>
+            </div>
+            <div class="art">
+                <div class="artim"><img src="blog2.jpg" alt="article"></div>
+                <div class="artc"
+                    style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                    <a href="blogpost2.html">
+                        <h3>Know about evolution of technology in today's era</h3>
+                    </a>
+                    <div>Author's Name: Olivia Harlow</div>
+                    <span>7th July, 2020 | 20 minutes read</span>
+                </div>
+            </div>
+            <div class="art">
+                <div class="artim"><img src="blog4.jpg" alt="article"></div>
+                <div class="artc"
+                    style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                    <a href="blogpost4.html">
+                        <h3>Cinema : Lights, camera and action</h3>
+                    </a>
+                    <div>Author's Name : STUDIOBINDER</div>
+                    <span>8th July, 2021 | 15 minutes read</span>
+                </div>
+            </div>
+            <div class="art">
+                <div class="artim"><img src="blog5.jpg" alt="article"></div>
+                <div class="artc"
+                    style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                    <a href="blogpost5.html">
+                        <h3>Health and Fitness</h3>
+                    </a>
+                    <div>Author's Name : Adam Felman</div>
+                    <span>20th July, 2021 | 25 minutes read</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot maxw2">
+        <p> &copy; blogIt.com | All Rights Reserved.</p>
+
+    </div>
+</body>
+
+</html>

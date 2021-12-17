@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogIt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --main-bg-color: brown;
+    }
+
+    .navi {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 81vw;
+        margin: auto;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-top: 30px;
+        animation-duration: 1s;
+        
+    }
+
+    .nl {
+        font-size: large;
+        display: flex;
+    }
+
+    .nl ul li {
+        list-style: none;
+        margin: 0 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 8px;
+    }
+
+
+    .nl ul {
+        display: flex;
+        align-items: center;
+        margin: 0 80px;
+        font-size: large;
+    }
+
+    .nl ul li a {
+        text-decoration: none;
+        color: darkslategray;
+
+    }
+
+    .nl ul li a:hover {
+        font-size: larger;
+        font-weight: bold;
+        color: var(--main-bg-color);
+    }
+
+
+
+    .c {
+        height: 100%;
+        background-color: rgb(243, 243, 244, 0.7);
+        display: flex;
+        padding: 10px;
+        border-radius: 15px;
+        position: relative;
+        animation-duration: 7s;
+    }
+
+    .c::after {
+        background-image: url(keyboard.jpg);
+        content: "";
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 725px;
+        width: 100%;
+        height: inherit;
+        opacity: 0.1;
+    }
+
+    .foot {
+        height: 40px;
+        background-color: var(--main-bg-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .maxw1 {
+        max-width: 81vw;
+        margin: 35px auto;
+    }
+
+    .maxw2 {
+        max-width: 95vw;
+        margin: auto;
+    }
+
+    .formin {
+        width: 200px;
+        padding: 10px 10px;
+        font-size: small;
+        border: 2px solid grey;
+        border-radius: 7px;
+        margin: 0 5px;
+        font-family: cursive;
+        transition: .3s ease-in-out;
+    }
+
+    .formin:hover {
+        box-shadow: 2px 2px 2px 2px grey;
+    }
+
+    .btn {
+        padding: 6px 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size: medium;
+        font-family: cursive;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+
+    .btn:hover {
+        background-color: var(--main-bg-color);
+        color: white;
+    }
+
+    .cl {
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 35px;
+        z-index: 1;
+    }
+
+    .cr {
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cr img {
+        height: 350px;
+        border: 3px solid darkgray;
+        border-radius: 200px;
+        padding: 5px;
+        animation-duration: 3s;
+    }
+
+    .arts {
+        background-color: rgb(240, 233, 233, 0.6);
+        border-radius: 20px;
+        padding: 15px;
+        position: relative;
+       animation-duration: 2s;
+        animation-delay: 6s;
+    }
+
+    .art img {
+        width: 200px;
+        border-radius: 20px;
+    }
+
+    .art {
+        display: flex;
+        margin: 25px;
+    }
+
+    .artc {
+        align-self: center;
+        padding: 25px;
+    }
+
+    .artc a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .y {
+        position: absolute;
+        width: 80px;
+        height: auto;
+        right: 10px;
+        top: 10px;
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: 5px ridge var(--main-bg-color);
+        border-radius: 17px;
+        padding: 6px;
+    }
+
+    .y input {
+        margin: 6px 5px;
+
+    }
+
+    @media screen and (max-width:1100px) {
+        .navi {
+            flex-direction: column;
+
+        }
+
+        .nl {
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .cr {
+            display: none;
+        }
+
+        .art {
+            flex-direction: column;
+        }
+
+        .artim {
+            text-align: center;
+        }
+
+        .artc {
+            text-align: center;
+        }
+
+        .y {
+
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            right: 35vw;
+            display: flex;
+            border: none;
+            position: static;
+            height: auto;
+            flex-direction: column;
+        }
+
+        .formin {
+            width: 50%;
+        }
+    }
+
+    .progress {
+
+        height: 2px;
+        animation: load 1s ease-in-out 1;
+    }
+
+    .nores {
+        height: 55px;
+    position: relative;
+    width: fit-content;
+    background-color: #b1a8d7;
+    margin: 27px auto;
+    border-radius: 3px;
+    padding: 10px;
+    }
+   
+
+    @keyframes load {
+        0% {
+            width: 0;
+            background-color: red;
+        }
+
+        50% {
+            width: 60vw;
+            background-color: red;
+        }
+
+        95% {
+            width: 100vw;
+            background-color: red;
+        }
+
+        100% {
+            width: 101vw;
+            background: none;
+        }
+    }
+</style>
+
+<body>
+    <div class="progress"></div>
+    <nav class="navi animate__animated animate__bounceInDown">
+        <div class="nl">
+            <div style="display: flex;"><img src="bloglogo.png" alt=""><span
+                    style="color: blueviolet; font-size: 40px; font-family: cursive;"><b>It</b></span></div>
+            <ul>
+                <li style="background-color: rgb(244, 172, 172); "><a style="color: ivory;"
+                        href="bloghome.html">Home</a>
+                </li>
+                <li><a href="about.html">About</a>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nr">
+            <input id="inp" class="formin" type="text" name="query" placeholder="Search Title/Keyword of Article">
+            <button id="bt" class="btn">Search</button>
+
+        </div>
+    </nav>
+    <div class="maxw1">
+        <hr>
+    </div>
+    <div class="c maxw1 animate__animated animate__fadeInLeftBig">
+        <div class="cl">
+            <h1 id="ta">blogIt : The Blog Arena</h1><br>
+            <p style="font-size: 19px; font-weight:600 ;">"blogIt" is the perfect spot for bloggers to get their content
+                read and approved by numerable viewers.
+                Your
+                blogs will aid the readers regarding various issues and the best help provided by you will be supported
+                by increasing your followers and making you popular. So just grab it up and pen it down!</p>
+            <p></p>
+        </div>
+        <div class="cr"><img src="type.jpg" alt="blogIt" class="animate__animated animate__fadeInRightBig"></div>
+    </div>
+    <div class="maxw1">
+        <hr>
+    </div>
+    <div class="arts maxw1 animate__animated animate__bounceIn">
+        <div class="y">
+            <h6>Select a year (even if already selected)</h6> <br>
+            <hr>
+            <h4>Year:</h4>
+            <div><input type="radio" name="year" id="y9" style="cursor: pointer;">2019 <br></div>
+            <div><input type="radio" name="year" id="y0" style="cursor: pointer;">2020 <br></div>
+            <div><input type="radio" name="year" id="y1" style="cursor: pointer;">2021</div>
+        </div>
+        <h1 id="hh" style="padding: 15px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            Featured
+            Articles</h1>
+        
+        <div class="art" id="1a9">
+            <div class="artim"><img src="blog1.jpg" alt="article"></div>
+            <div class="artc"
+                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                <a href="blogpost1.html">
+                    <h3 id="ah1">What do you know about Blog?</h3>
+                </a>
+                <div>Author's Name:Artem Minaev</div>
+                <span>7th July, 2019 | 10 minutes read</span>
+            </div>
+        </div>
+        <div class="art" id="1a0">
+            <div class="artim"><img src="blog2.jpg" alt="article"></div>
+            <div class="artc"
+                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                <a href="blogpost2.html">
+                    <h3 id="ah2">Know about evolution of technology in today's era</h3>
+                </a>
+                <div>Author's Name: Olivia Harlow</div>
+                <span>7th July, 2020 | 20 minutes read</span>
+            </div>
+        </div>
+        <div class="art" id="1a1">
+            <div class="artim"><img src="blog3.jpg" alt="article"></div>
+            <div class="artc"
+                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                <a href="blogpost3.html">
+                    <h3 id="ah3">Words on news</h3>
+                </a>
+                <div>Author's Name : Anonymous</div>
+                <span>8th July, 2021 | 30 minutes read</span>
+            </div>
+        </div>
+        <div class="art" id="2a1">
+            <div class="artim"><img src="blog4.jpg" alt="article"></div>
+            <div class="artc"
+                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                <a href="blogpost4.html">
+                    <h3 id="ah4">Cinema : Lights, camera and action</h3>
+                </a>
+                <div>Author's Name : STUDIOBINDER</div>
+                <span>8th July, 2021 | 15 minutes read</span>
+            </div>
+        </div>
+        <div class="art" id="3a1">
+            <div class="artim"><img src="blog5.jpg" alt="article"></div>
+            <div class="artc"
+                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                <a href="blogpost5.html">
+                    <h3 id="ah5">Health and Fitness</h3>
+                </a>
+                <div>Author's Name : Adam Felman</div>
+                <span>20th July, 2021 | 25 minutes read</span>
+            </div>
+        </div>
+        <div class="no" style="font-size: xx-large; font-family: cursive;"></div>
+    </div>
+    <div class="foot maxw2">
+        <p>Copyright &copy; blogIt.com | All Rights Reserved.</p>
+
+    </div>
+</body>
+<script>
+
+    setInterval(() => {
+        var items = document.querySelectorAll('#ta');
+        for (var i = 0, len = items.length; i < len; i++) {
+            (function () {
+                var t = this, e = JSON.parse('["blogIt : The Blog Arena","blogIt : The Heaven for Bloggers","blogIt : The World of Blogs","blogIt : Just Blog it up!"]'), n = function (t) {
+                    return parseInt(t, 10) || 0
+                }
+                    , r = function (t) {
+                        return !!t
+                    }
+                    , o = function () {
+                        var o = t;
+                        o.innerHTML = '<span></span>';
+                        var i = parseInt('Infinity', 10), a = {
+                            typeSpeed: n('30'), startDelay: n(''), backDelay: n('700'), backSpeed: n(''), smartBackspace: r('true'), fadeOut: r(''), fadeOutClass: 'typed-fade-out', fadeOutDelay: n('500'), shuffle: r(''), loop: r(''), loopCount: isNaN(i) ? 1 / 0 : i, showCursor: r('true'), cursorChar: '|', autoInsertCss: r('true'), bindInputFocusEvents: r(''), attr: '', contentType: 'html'
+                        };
+                        e && e.length && (a.strings = e), new Typed(o.children[0], a)
+                    };
+                if (window.Typed) o();
+                else {
+                    var i = document.createElement('script');
+                    i.src = 'https://cdn.jsdelivr.net/npm/typed.js', i.onload = o, document.head.appendChild(i)
+                }
+            }
+                .bind(items[i]))();
+        }
+    }, 7000);
+
+    document.getElementById("y9").addEventListener('click', function () {
+        console.log('2019');
+        document.getElementById('1a9').style.display = 'contents';
+        document.getElementById('1a0').style.display = 'none';
+        document.getElementById('1a1').style.display = 'none';
+        document.getElementById('2a1').style.display = 'none';
+        document.getElementById('3a1').style.display = 'none';
+    })
+    document.getElementById("y0").addEventListener('click', function () {
+        console.log('2020');
+        document.getElementById('1a9').style.display = 'none';
+        document.getElementById('1a0').style.display = 'contents';
+        document.getElementById('1a1').style.display = 'none';
+        document.getElementById('2a1').style.display = 'none';
+        document.getElementById('3a1').style.display = 'none';
+    })
+    document.getElementById("y1").addEventListener('click', function () {
+        console.log('2021');
+        document.getElementById('1a9').style.display = 'none';
+        document.getElementById('1a0').style.display = 'none';
+        document.getElementById('1a1').style.display = 'contents';
+        document.getElementById('2a1').style.display = 'contents';
+        document.getElementById('3a1').style.display = 'contents';
+    })
+    cc = document.querySelector('.c');
+    m1 = document.querySelector('.maxw1')
+    hh = document.getElementById('hh')
+    yy = document.querySelector('.y')
+    no = document.querySelector('.no')
+   
+    document.getElementById('bt').addEventListener('click', function () {
+        cc.style.display = 'none';
+        m1.style.display = 'none';
+        yy.style.display = 'none';
+        inp = document.getElementById('inp').value;
+        hh.innerHTML = `Search Results for "${inp}" (0.03 seconds)`;
+        console.log('searched')
+        ah1 = document.getElementById('ah1');
+        ah2 = document.getElementById('ah2');
+        ah3 = document.getElementById('ah3');
+        ah4 = document.getElementById('ah4');
+        ah5 = document.getElementById('ah5');
+        ah1 = ah1.innerHTML.toLowerCase();
+        ah2 = ah2.innerHTML.toLowerCase();
+        ah3 = ah3.innerHTML.toLowerCase();
+        ah4 = ah4.innerHTML.toLowerCase();
+        ah5 = ah5.innerHTML.toLowerCase();
+        inp = inp.toLowerCase();
+        console.log(inp)
+        if (ah1.includes(inp) == false)
+            document.getElementById('1a9').style.display = 'none';
+        else
+            document.getElementById('1a9').style.display = 'contents';
+
+        if (ah2.includes(inp) == false)
+            document.getElementById('1a0').style.display = 'none';
+        else
+            document.getElementById('1a0').style.display = 'contents';
+
+        if (ah3.includes(inp) == false)
+            document.getElementById('1a1').style.display = 'none';
+        else
+            document.getElementById('1a1').style.display = 'contents';
+
+        if (ah4.includes(inp) == false)
+            document.getElementById('2a1').style.display = 'none';
+        else
+            document.getElementById('2a1').style.display = 'contents';
+
+        if (ah5.includes(inp) == false)
+            document.getElementById('3a1').style.display = 'none';
+        else
+            document.getElementById('3a1').style.display = 'contents';
+
+        if (ah1.includes(inp) == false && ah2.includes(inp) == false && ah3.includes(inp) == false && ah4.includes(inp) == false && ah5.includes(inp) == false)
+        {
+            no.style.visibility='visible';
+            no.className += ' nores';   
+            no.innerHTML="No results found :'(";  
+            console.log('no result')
+        }
+        else
+        no.style.visibility='hidden';
+        
+        console.log('done')
+
+    })
+
+
+
+</script>
+
+</html>

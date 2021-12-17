@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogItsearch</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --main-bg-color: brown;
+    }
+
+    .navi {
+       
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 81vw;
+        margin: auto;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-top:30px;
+        animation-duration: 2s;
+    }
+
+    .nl {
+        font-size: large;
+        display: flex;
+    }
+
+    .nl ul li {
+        list-style: none;
+        margin: 0 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 8px;
+    }
+
+
+    .nl ul {
+        display: flex;
+        align-items: center;
+        margin: 0 80px;
+        font-size: large;
+    }
+
+    .nl ul li a {
+        text-decoration: none;
+        color: darkslategray;
+
+    }
+
+    .nl ul li a:hover {
+        font-size: larger;
+        font-weight: bold;
+        color: var(--main-bg-color);
+    }
+
+   
+
+    .c {
+        height: 400px;
+        background-color: rgb(243, 243, 244, 0.7);
+        display: block;
+        padding: 10px;
+        border-radius: 15px;
+        position: relative;
+
+    }
+
+    .c::after {
+        background-image: url(keyboard.jpg);
+        content: "";
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 725px;
+        width: 100%;
+        height: inherit;
+        opacity: 0.1;
+    }
+
+    .foot {
+        height: 40px;
+        background-color: var(--main-bg-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .maxw1 {
+        max-width: 81vw;
+        margin: 35px auto;
+    }
+
+    .maxw2 {
+        max-width: 95vw;
+        margin: auto;
+    }
+
+    .formin {
+        width: 200px;
+        padding: 10px 10px;
+        font-size: small;
+        border: 2px solid grey;
+        border-radius: 7px;
+        margin: 0 5px;
+        font-family: cursive;
+        transition: .3s ease-in-out;
+    }
+
+    .formin:hover {
+        box-shadow: 2px 2px 2px 2px grey;
+    }
+
+    .btn {
+        padding: 6px 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size: medium;
+        font-family: cursive;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+
+    .btn:hover {
+        background-color: var(--main-bg-color);
+        color: white;
+    }
+
+    .cl {
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 35px;
+    }
+
+    .cr {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cr img {
+        height: 350px;
+        border: 3px solid darkgray;
+        border-radius: 200px;
+        padding: 5px;
+    }
+
+    .arts {
+        background-color: rgb(240, 233, 233, 0.6);
+        border-radius: 20px;
+        padding: 15px;
+        height: fit-content;
+    }
+
+    .art img {
+        width: 200px;
+        border-radius: 20px;
+    }
+
+    .art {
+        display: flex;
+        margin: 25px;
+    }
+
+    .artc {
+        align-self: center;
+        padding: 25px;
+    }
+
+    .artc a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .cc {
+        min-height: 610px;
+        background-color: rgba(236, 236, 240, 0.7);
+        display: block;
+        padding: 10px;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cc::after {
+        background-image: url(keyboard.jpg);
+        content: "";
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 725px;
+        width: 100%;
+        height: inherit;
+        opacity: 0.1;
+        top: 0;
+        z-index: -1;
+    }
+
+    .cf {
+        padding: 15px;
+    }
+
+    .fb input,
+    textarea {
+        width: 40vw;
+        padding: 9px 5px;
+        margin: 5px 0;
+        border: 2px solid var(--main-bg-color);
+        border-radius: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: large;
+    }
+    @media screen and (max-width:1100px) {
+        .navi {
+            flex-direction: column;
+
+        }
+        .nl {
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+        }
+        .formin{
+            width: 50%;
+        }
+        .fb input, textarea {
+    width: 68vw;
+        }
+    }
+    .progress{
+      
+        height: 2px;
+        animation: load 1s ease-in-out 1 ;
+    }
+    @keyframes load {
+        0%{
+            width: 0;
+            background-color: red;
+        }
+        50%{
+            width: 60vw;
+            background-color: red;
+        }
+        95%{
+            width: 100vw;
+            background-color: red;
+        }
+         100%{
+             width: 101vw;
+             background: none;
+         }
+    }
+</style>
+
+<body>
+    <div class="progress"></div>
+    <nav class="navi animate__animated animate__bounceIn">
+        <div class="nl"><div style="display: flex;"><img src="bloglogo.png" alt=""><span
+                style="color: blueviolet; font-size: 40px; font-family: cursive;"><b>It</b></span></div>
+            <ul>
+                <li><a href="bloghome.html">Home</a>
+                </li>
+                <li><a
+                        href="about.html">About</a>
+                </li>
+                <li style="background-color: rgb(244, 172, 172); "><a style="color: ivory;" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nr">
+            <form action="search.html" method="get"><input class="formin" type="text" name="query"
+                    placeholder="Search Title/Keyword of Article">
+                <button class="btn">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+    <div class="maxw1">
+        <hr>
+    </div>
+    <div class="cc">
+        <div class="arts maxw1">
+            <h1 style="padding: 15px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Feel
+                Free to Contact Us</h1>
+            <div class="cf">
+                <div class="fb">
+                    <input type="text" placeholder="Enter Your Name">
+                </div><br>
+                <div class="fb">
+                    <input type="email" placeholder="Enter Your E-mail id">
+                </div><br>
+                <div class="fb">
+                    <input type="number" placeholder="Enter Your Contact Number">
+                </div><br>
+                <div class="fb">
+                    <textarea name="" id="" cols="30" rows="10"
+                        placeholder="Any Comments or Want Help? Feel free to share with us :)"></textarea>
+                </div><br>
+                <div class="fb">
+                    <button class="btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot maxw2">
+        <p>Copyright &copy; blogIt.com | All Rights Reserved.</p>
+       
+    </div>
+</body>
+
+</html>
